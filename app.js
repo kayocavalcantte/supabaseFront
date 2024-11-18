@@ -12,7 +12,7 @@ const closeModalButton = document.getElementById('close-modal');
 
 // Function to fetch all products from the server
 async function fetchProducts() {
-  const response = await fetch('http://54.165.35.134:3000/products');
+  const response = await fetch('http://34.228.213.194:3000/products');
   const products = await response.json();
 
   // Clear product list
@@ -74,7 +74,7 @@ addProductForm.addEventListener('submit', async (event) => {
     price: addProductForm.price.value,
   };
 
-  await fetch('http://54.165.35.134:3000/products', {
+  await fetch('http://34.228.213.194:3000/products', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(newProduct),
@@ -95,7 +95,7 @@ updateProductForm.addEventListener('submit', async (event) => {
     price: updateProductPrice.value,
   };
 
-  await fetch(`http://54.165.35.134:3000/products/${updatedProduct.id}`, {
+  await fetch(`http://34.228.213.194:3000/products/${updatedProduct.id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updatedProduct),
@@ -107,7 +107,7 @@ updateProductForm.addEventListener('submit', async (event) => {
 
 // Delete product by ID
 async function deleteProduct(id) {
-  await fetch(`http://54.165.35.134:3000/products/${id}`, { method: 'DELETE' });
+  await fetch(`http://34.228.213.194:3000/products/${id}`, { method: 'DELETE' });
 }
 
 // Initial fetch of products
